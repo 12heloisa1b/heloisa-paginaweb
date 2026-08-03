@@ -46,3 +46,11 @@ footer{
     pedding: 15px 25px;
   color: hsl(318, 52%, 56%);;
 }
+
+.cartao-interno {
+    position: relative;
+}
+
+,cartao-frente, .cartao-verso {
+    position: absolute;
+}
