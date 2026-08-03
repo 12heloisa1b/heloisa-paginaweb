@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: hotpink;
+    background-color: #fff;
 }
 
 .cartao {
@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #fff;
 }
 
 main{
@@ -31,10 +32,15 @@ main{
 }
 
 .cabecalho-link{
-    color:hotpink;
+    color:#fff;
     text-decoration: none;
 }
 
 h1{
-  color:hotpink;
+  color:#fff;
+}
+
+footer{
+    background-color: #fff;
+    pedding: 15px 25px;
 }
