@@ -38,9 +38,11 @@ main{
 
 h1{
   color:#fff;
+  font-size: 24px;
 }
 
 footer{
     background-color: #fff;
     pedding: 15px 25px;
+  color: #fff;
 }
