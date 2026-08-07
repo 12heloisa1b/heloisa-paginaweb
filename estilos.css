@@ -1,102 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+   margin: 0;
+   padding: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f9;
-    font-family: sans-serif;
-}
 
 .cabecalho {
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: hsl(318, 52%, 56%);
+   padding: 15px 25px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: hsl(318, 52%, 56%);
 }
 
-h1 {
-    color: #ffffff;
-    font-size: 24px;
-}
-
-.cabecalho-link {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-footer {
-    background-color: hsl(318, 52%, 56%);
-    padding: 15px 25px;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* --- EFEITO FLIP CARD --- */
 
 .cartao {
-    width: 280px;
-    height: 320px;
-    perspective: 1000px; /* Habilita a perspectiva 3D */
+   width: 260px;
+   height: 200px;
 }
 
-.cartao-interno {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-/* Girar o cartão ao passar o mouse */
-.cartao:hover .cartao-interno {
-    transform: rotateY(180deg);
-}
-
-.cartao-frente, .cartao-verso {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    
-    /* Esconde o lado de trás da div */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* O verso começa rodado 180 graus */
-.cartao-verso {
-    transform: rotateY(180deg);
-}
 
 .cartao-imagem {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    width: 90%;
 }
+
+
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: hsl(318, 52%, 56%);;
+}
+
+
+main{
+   flex: 1;
+}
+
+
+.cabecalho-link{
+   color:hsl(318, 52%, 56%);;
+   text-decoration: none;
+}
+
+
+h1{
+ color:hsl(318, 52%, 56%);;
+ font-size: 24px;
+}
+
+
+footer{
+   background-color:hsl(318, 52%, 56%);;
+   padding: 15px 25px;
+ color: hsl(318, 52%, 56%);;
+}
+
+
+.cartao-interno {
+   position: relative;
+}
+
+
+.cartao-frente, .cartao-verso {
+   position: absolute;
+   border-radius: 12px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
