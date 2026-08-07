@@ -1,8 +1,15 @@
-*{
+* {
    margin: 0;
    padding: 0;
+   box-sizing: border-box; /* Boa prática para evitar problemas de largura/altura */
 }
 
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: hsl(0, 0%, 99%);
+}
 
 .cabecalho {
    padding: 15px 25px;
@@ -12,57 +19,54 @@
    background-color: hsl(318, 84%, 52%);
 }
 
-
-.cartao {
-   width: 260px;
-   height: 200px;
-}
-
-
-.cartao-imagem {
-    width: 90%;
-}
-
-
-body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   background-color: hsl(0, 0%, 99%);;
-}
-
-
-main{
-   flex: 1;
-}
-
-
-.cabecalho-link{
-   color:hsl(318, 95%, 40%);;
+.cabecalho-link {
+   color: hsl(318, 95%, 40%);
    text-decoration: none;
 }
 
-
-h1{
- color:hsl(0, 0%, 0%);;
- font-size: 24px;
+h1 {
+   color: hsl(0, 0%, 0%);
+   font-size: 24px;
 }
 
-
-footer{
-   background-color:hsl(318, 52%, 56%);;
-   padding: 15px 25px;
- color: hsl(318, 52%, 56%);;
+main {
+   flex: 1;
 }
 
+/* Configuração do Cartão */
+.cartao {
+   width: 260px;
+   height: 200px;
+   perspective: 1000px; /* Adicionado para dar efeito 3D ao girar */
+}
 
 .cartao-interno {
    position: relative;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s;
+   transform-style: preserve-3d;
 }
 
-
 .cartao-frente, .cartao-verso {
-    position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   border-radius: 12px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+   backface-visibility: hidden; /* Esconde o verso da face */
+}
+
+.cartao-verso {
+   transform: rotateY(180deg); /* Prepara o verso girado */
+}
+
+.cartao-imagem {
+   width: 90%;
+}
+
+footer {
+   background-color: hsl(318, 52%, 56%);
+   padding: 15px 25px;
+   color: #ffffff; /* Cor ajustada para o texto ficar visível */
 }
