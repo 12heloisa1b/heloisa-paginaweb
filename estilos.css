@@ -1,9 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.cabecalho {
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f9; /* Mudei o fundo para os textos aparecerem */
+    font-family: sans-serif;
+}
+
+/* Cabeçalho e Rodapé */
+.cabecalho, header {
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
@@ -11,48 +21,84 @@
     background-color: hsl(318, 52%, 56%);
 }
 
-.cartao {
-    width: 260px;
-    height: 200px;
+h1 {
+    color: #ffffff; /* Cor branca para dar contraste */
+    font-size: 24px;
 }
 
-.cartao-imagem {
-     width: 90%;
+.cabecalho-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-body {
+main {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: hsl(318, 52%, 56%);;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-main{
-    flex: 1;
-}
-
-.cabecalho-link{
-    color:hsl(318, 52%, 56%);;
-    text-decoration: none;
-}
-
-h1{
-  color:hsl(318, 52%, 56%);;
-  font-size: 24px;
-}
-
-footer{
-    background-color:hsl(318, 52%, 56%);;
+footer {
+    background-color: hsl(318, 52%, 56%);
     padding: 15px 25px;
-  color: hsl(318, 52%, 56%);;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* --- ESTRUTURA DO CARTÃO (FLIP CARD) --- */
+
+.cartao {
+    width: 280px;
+    height: 320px;
+    perspective: 1000px; /* Cria o efeito de profundidade 3D */
 }
 
 .cartao-interno {
     position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Girar o cartão ao passar o mouse */
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
 }
 
 .cartao-frente, .cartao-verso {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
     border-radius: 12px;
+    background-color: #ffffff;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Esconde o lado de trás de cada face */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O verso começa virado de costas */
+.cartao-verso {
+    transform: rotateY(180deg);
+}
+
+.cartao-imagem {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
