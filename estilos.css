@@ -1,72 +1,123 @@
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box; /* Boa prática para evitar problemas de largura/altura */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-   background-color: hsl(0, 0%, 99%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff0f5; /* Rosa claro bem suave (Lavender Blush) */
+    font-family: Arial, sans-serif;
+    color: #4a2e35;
 }
 
+/* --- CABEÇALHO --- */
 .cabecalho {
-   padding: 15px 25px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   background-color: hsl(318, 84%, 52%);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff69b4; /* Rosa choque / Hot Pink */
+    box-shadow: 0 2px 10px rgba(255, 105, 180, 0.3);
 }
 
 .cabecalho-link {
-   color: hsl(318, 95%, 40%);
-   text-decoration: none;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #ff1493; /* Rosa profundo para o botão */
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.cabecalho-link:hover {
+    background-color: #c71585; /* Rosa bem escuro ao passar o mouse */
 }
 
 h1 {
-   color: hsl(0, 0%, 0%);
-   font-size: 24px;
+    color: #ffffff;
+    font-size: 24px;
 }
 
+/* --- ÁREA PRINCIPAL --- */
 main {
-   flex: 1;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-/* Configuração do Cartão */
+.container-flashcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- FLASHCARDS 3D --- */
 .cartao {
-   width: 260px;
-   height: 200px;
-   perspective: 1000px; /* Adicionado para dar efeito 3D ao girar */
+    width: 260px;
+    height: 320px;
+    perspective: 1000px;
 }
 
 .cartao-interno {
-   position: relative;
-   width: 100%;
-   height: 100%;
-   transition: transform 0.6s;
-   transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.cartao-frente, .cartao-verso {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   border-radius: 12px;
-   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-   backface-visibility: hidden; /* Esconde o verso da face */
+/* Giro no hover */
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
 }
 
+.cartao-frente, 
 .cartao-verso {
-   transform: rotateY(180deg); /* Prepara o verso girado */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(255, 105, 180, 0.25);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
+/* Imagens */
 .cartao-imagem {
-   width: 90%;
+    width: 80%;
+    height: auto;
+    max-height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ffb6c1; /* Borda rosa clara */
 }
 
-footer {
-   background-color: hsl(318, 52%, 56%);
-   padding: 15px 25px;
-   color: #ffffff; /* Cor ajustada para o texto ficar visível */
+/* Frente do Cartão (Rosa Claro) */
+.cartao-frente {
+    background-color: #ffffff;
+    color: #d81b60; /* Texto rosa forte */
+    border: 2px solid #ff8da1;
 }
+
+.dica {
+    font-size: 11px;
+    margin-top: 8px;
+    color: #e91e63;
+    opacity: 0.8;
+}
+
+/* Verso do Cartão
