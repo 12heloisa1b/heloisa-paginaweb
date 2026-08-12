@@ -8,18 +8,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #fff0f5; /* Rosa claro bem suave (Lavender Blush) */
+    background-color: #fff0f5;
     font-family: Arial, sans-serif;
     color: #4a2e35;
 }
 
-/* --- CABEÇALHO --- */
+/* --- CABECALHO --- */
 .cabecalho {
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff69b4; /* Rosa choque / Hot Pink */
+    background-color: #ff69b4;
     box-shadow: 0 2px 10px rgba(255, 105, 180, 0.3);
 }
 
@@ -27,14 +27,14 @@ body {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    background-color: #ff1493; /* Rosa profundo para o botão */
+    background-color: #ff1493;
     padding: 8px 16px;
     border-radius: 20px;
     transition: background-color 0.3s;
 }
 
 .cabecalho-link:hover {
-    background-color: #c71585; /* Rosa bem escuro ao passar o mouse */
+    background-color: #c71585;
 }
 
 h1 {
@@ -42,7 +42,7 @@ h1 {
     font-size: 24px;
 }
 
-/* --- ÁREA PRINCIPAL --- */
+/* --- AREA PRINCIPAL --- */
 main {
     flex: 1;
     display: flex;
@@ -74,7 +74,6 @@ main {
     transform-style: preserve-3d;
 }
 
-/* Giro no hover */
 .cartao:hover .cartao-interno {
     transform: rotateY(180deg);
 }
@@ -95,7 +94,6 @@ main {
     text-align: center;
 }
 
-/* Imagens */
 .cartao-imagem {
     width: 80%;
     height: auto;
@@ -103,13 +101,12 @@ main {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    border: 2px solid #ffb6c1; /* Borda rosa clara */
+    border: 2px solid #ffb6c1;
 }
 
-/* Frente do Cartão (Rosa Claro) */
 .cartao-frente {
     background-color: #ffffff;
-    color: #d81b60; /* Texto rosa forte */
+    color: #d81b60;
     border: 2px solid #ff8da1;
 }
 
@@ -120,4 +117,23 @@ main {
     opacity: 0.8;
 }
 
-/* Verso do Cartão
+.cartao-verso {
+    background-color: #ff6699;
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.cartao-verso h3 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffb3cc;
+    padding-bottom: 5px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: #ffb6c1;
+    padding: 15px 25px;
+    color: #8b0042;
+    font-weight: bold;
+    text-align: center;
+}
