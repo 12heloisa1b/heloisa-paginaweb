@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(144, 11, 11);
+    background-color: rgb(33, 150, 4);
 }
 
 .cartao {
@@ -46,7 +46,7 @@ h1{
 }
 
 footer {
-    background-color: rgb(144, 11, 11);
+    background-color: rgb(55, 138, 0);
     padding: 15px 25px;
     color: #fff;
 }
